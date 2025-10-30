@@ -69,7 +69,7 @@ const Donate = () => {
     try {
       // --- STEP 1: Call your backend to create an order ---
       // Replace 'http://localhost:5000' with your actual backend URL
-      const orderResponse = await fetch('http://localhost:5000/api/create-order', {
+      const orderResponse = await fetch('https://ngo-backend-1-kldv.onrender.com/api/create-order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -100,7 +100,9 @@ const Donate = () => {
         handler: async (response) => {
           try {
             // --- STEP 4: Call your backend to verify the payment ---
-            const verificationResponse = await fetch('http://localhost:5000/api/payment-verification', {
+            
+            const verificationResponse = await fetch('https://ngo-backend-1-kldv.onrender.com/api/payment-verification', {
+
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
