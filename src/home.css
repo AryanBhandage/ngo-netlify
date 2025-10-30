@@ -1,0 +1,136 @@
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* Full-width slideshow container */
+.slideshow-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: static; /* Changed from relative to prevent positioning conflicts */
+  top: 0; /* Aligns to top of parent */
+  overflow: hidden;
+}
+
+/* Ensure no margins/padding from react-slideshow-image */
+.react-slideshow-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Slideshow images */
+.slideshow-container img {
+  width: 100%;
+  height: 550px; /* Taller for hero effect */
+  object-fit: cover;
+  display: block;
+}
+
+/* Proper circular nav buttons */
+.react-slideshow-container .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 50% !important;
+  width: 45px !important;
+  height: 45px !important;
+  cursor: pointer;
+  z-index: 10;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-slideshow-container .nav span {
+  color: #fff !important;
+  font-size: 22px !important;
+  line-height: 1;
+}
+
+/* Place left/right */
+.react-slideshow-container .nav:first-of-type {
+  left: 20px !important;
+}
+
+.react-slideshow-container .nav:last-of-type {
+  right: 20px !important;
+}
+
+/* Indicators */
+.react-slideshow-container .indicators {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.react-slideshow-container .indicators .each-slideshow-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff0000;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.react-slideshow-container .indicators .active {
+  background: #004080;
+}
+
+/* NGO colors */
+.text-ngo-blue {
+  color: #004080;
+}
+
+.bg-ngo-blue {
+  background-color: #004080;
+}
+
+.bg-ngo-gold {
+  background-color: #ffd700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .slideshow-container img {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slideshow-container img {
+    height: 320px;
+  }
+  .react-slideshow-container .nav {
+    width: 32px;
+    height: 32px;
+  }
+  .react-slideshow-container .nav span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow-container img {
+    height: 220px;
+  }
+  .react-slideshow-container .nav {
+    width: 28px;
+    height: 28px;
+  }
+  .react-slideshow-container .nav span {
+    font-size: 14px;
+  }
+}
